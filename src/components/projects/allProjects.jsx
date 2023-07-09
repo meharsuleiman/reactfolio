@@ -1,27 +1,25 @@
-import React from "react";
+import React from 'react';
+import Project from './project';
+import './styles/allProjects.css';
 
-import Project from "./project";
-
-import INFO from "../../data/user";
-
-import "./styles/allProjects.css";
+import Logo1 from './media/image1.jpg';
+import Logo2 from './media/image2.jpg';
+import Logo3 from './media/image3.jpg';
+import Logo4 from './media/image4.jpg';
+import Logo5 from './media/image5.jpg';
+import Logo6 from './media/image6.jpg';
 
 const AllProjects = () => {
-	return (
-		<div className="all-projects-container">
-			{INFO.projects.map((project, index) => (
-				<div className="all-projects-project" key={index}>
-					<Project
-						logo={project.logo}
-						title={project.title}
-						description={project.description}
-						linkText={project.linkText}
-						link={project.link}
-					/>
-				</div>
-			))}
-		</div>
-	);
+  const Logo = [Logo1, Logo2, Logo3, Logo4, Logo5, Logo6];
+  return (
+    <div className='all-projects-container'>
+      {Logo.map((logo, index) => (
+        <div className='all-projects-project' key={index}>
+          <Project logo={logo} />
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default AllProjects;
